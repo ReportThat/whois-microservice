@@ -9,7 +9,6 @@
     "start": "micro -p $PORT"
   },
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1",
     "micro": "^7.3.3",
     "micro-cors": "^0.0.4",
     "url": "^0.11.0",
