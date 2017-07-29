@@ -7,7 +7,7 @@ const parseWhoIsData = function (data) {
   var attr
   var attrColon
   var tempStr = ''
-  var returnArray = []
+  var returnObject = {}
 
   data.split('\n').forEach(function (part) {
     if (!part) return
@@ -16,21 +16,13 @@ const parseWhoIsData = function (data) {
     attr = part.substr(0, attrColon)
 
     if (attr !== '') {
-      returnArray.push({
-        'attribute': attr,
-        'value': part.substr(attrColon + 1).trim()
-      })
+      returnObject[attr] = part.substr(attrColon + 1).trim()
     } else {
       tempStr += part.substr(attrColon + 1).trim() + '\n'
     }
   })
-
-  returnArray.push({
-    'attribute': 'End Text',
-    'value': tempStr
-  })
-
-  return returnArray
+  returnObject['End Text'] = tempStr
+  return returnObject
 }
 
 const whoIs = (request, response) => {
