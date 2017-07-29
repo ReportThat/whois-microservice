@@ -1,0 +1,18 @@
+{
+  "name": "whoisApi",
+  "version": "1.0.0",
+  "description": "Micro service to run whois requests",
+  "main": "index.js",
+  "author": "Ulises Giacoman",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro -p $PORT"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "micro": "^7.3.3",
+    "micro-cors": "^0.0.4",
+    "url": "^0.11.0",
+    "whois": "^2.4.1"
+  }
+}
